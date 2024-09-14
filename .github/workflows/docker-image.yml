@@ -26,6 +26,18 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Finalizando login"
-        
+
+    - name: Build Docker Image
+      run: |
+        echo "Construyendo la imagen"
+        docker build -t minoshia/docker-graphql:0.0.2 .
+        echo "Imagen construida"
+
+    - name: Push Docker Image
+      run: |
+        echo "Publicando la imagen"
+        docker push minoshia/docker-graphql:0.0.2 .
+        echo "Imagen publicada"
+      
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
