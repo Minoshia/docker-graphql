@@ -29,15 +29,17 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        echo "Construyendo la imagen"
+        echo "Construyendo las imagenes"
         docker build -t minoshia/docker-graphql:0.0.2 .
-        echo "Imagen construida"
+        docker build -t minoshia/docker-graphql:latest .
+        echo "Imagenes construidas"
 
     - name: Push Docker Image
       run: |
-        echo "Publicando la imagen"
+        echo "Publicando las imagenes"
         docker push minoshia/docker-graphql:0.0.2
-        echo "Imagen publicada"
+        docker push minoshia/docker-graphql:latest
+        echo "Imagenes publicadas"
       
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
