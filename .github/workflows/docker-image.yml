@@ -36,7 +36,7 @@ jobs:
     - name: Push Docker Image
       run: |
         echo "Publicando la imagen"
-        docker push minoshia/docker-graphql:0.0.2 .
+        docker push minoshia/docker-graphql:0.0.2
         echo "Imagen publicada"
       
     # - name: Build the Docker image
